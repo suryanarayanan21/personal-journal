@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useAppDispatch, useAppSelector } from "@/state/store";
 
-interface Habit {
+export interface Habit {
     name: string;
-    createdOn: Date;
+    createdOn: string;
 }
 
 type Habits = Habit[];
@@ -32,7 +32,7 @@ export const useHabits = () => {
     const { createHabit: ch, deleteHabit: dh } = habitsTypeSlice.actions;
 
     const createHabit = (name: string) => {
-        const createdOn = new Date();
+        const createdOn = new Date().toLocaleString('en-US', { dateStyle: 'short' });
         dispatch(ch({ name, createdOn }));
     }
 

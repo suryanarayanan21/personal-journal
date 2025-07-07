@@ -3,11 +3,13 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import viewTypeReducer from '@/state/habittracker/viewType';
 import habitsReducer from '@/state/habittracker/habits';
+import habitActionsReducer from '@/state/habittracker/habitActions';
 
 const store =  configureStore({
   reducer: {
     viewType: viewTypeReducer,
-    habits: habitsReducer
+    habits: habitsReducer,
+    habitActions: habitActionsReducer
   },
 })
 
